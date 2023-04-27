@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"treinamento/app/api/config"
-	"treinamento/app/api/router"
+	"treinamento/app/api/endpoints/router"
 	"treinamento/infra/postgres"
 )
 

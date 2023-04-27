@@ -10,6 +10,9 @@ func Start() *echo.Echo {
 
 	loadMiddleware(router)
 
+	api := router.Group("/api")
+	loadBookRoutes(api)
+
 	return router
 }
 
