@@ -17,8 +17,12 @@ func (service BookServices) CreateBook(book domain.Book) (int, error) {
 	bookID, err := service.bookRepository.InsertBook(book)
 	if err != nil {
 		log.Print(err)
-		return -1, nil
+		return -1, err
 	}
 
 	return bookID, nil
+}
+
+func NewBookServices(bookRepo repository.BookLoader) *BookServices {
+	return &BookServices{bookRepository: bookRepo}
 }
